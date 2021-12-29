@@ -12,7 +12,7 @@ function App() {
         <div class="code-by">
           <p>
             <a
-              href="https://github.com/keciasantos/portfolio-project"
+              href="https://github.com/keciasantos/react-weather-app"
               target="_blank"
             >
               Open-source code{" "}
