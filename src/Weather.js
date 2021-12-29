@@ -5,12 +5,9 @@ import Form from "./Form";
 
 export default function Weather() {
   const [city, setCity] = useState();
-  // const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
-    // console.log(response.data);
-    // setLoaded(true)
     console.log(response.data);
     setWeather({
       temperature: Math.round(response.data.main.temp),
@@ -31,9 +28,8 @@ export default function Weather() {
     setCity(event.target.value);
   }
 
-  // if (loaded) {
   return (
-    <div className="container d-none d-sm-block Weather">
+    <div className="container weather">
       <div className="weather-app ">
         <div>
           <Form updateCity={updateCity} handleSubmit={handleSubmit} />
@@ -41,8 +37,8 @@ export default function Weather() {
             <h1>{city}</h1>
             {/* <h3>Last updated:</h3> */}
           </div>
-          <div className="row">
-            <div className="col-7">
+          <div className="row justify-content-center">
+            <div className="col-sm-6">
               <div className="clearfix weather-temperature">
                 <img
                   src={weather.icon}
@@ -56,10 +52,9 @@ export default function Weather() {
                 </div>
               </div>
             </div>
-            <div className="col-5">
+            <div className="col-sm-6">
               <ul>
                 <li>Description: {weather.description}</li>
-                <li>Temperature: {weather.temperature} Celsius</li>
                 <li>Humidity: {weather.humidity}%</li>
                 <li>Wind: {weather.wind}m/s</li>
               </ul>
@@ -69,7 +64,4 @@ export default function Weather() {
       </div>
     </div>
   );
-  // } else {
-  //   return form;
-  // }
 }

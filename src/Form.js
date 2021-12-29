@@ -4,7 +4,7 @@ export default function Form({ handleSubmit, updateCity }) {
   return (
     // <div className="weather-app">
     <form className="mb-4" onSubmit={handleSubmit}>
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="col col-sm-8">
           <input
             type="text"
